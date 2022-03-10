@@ -1,0 +1,71 @@
+$screen-1: 320px;
+$screen-2: 720px;
+$screen-3: 1024px;
+$screen-4: 1440px;
+
+// Media queries
+@mixin mobile-xs {
+  @media only screen and (max-width: #{$screen-1}) {
+    @content;
+  }
+}
+
+// "Mobile screen" is the base of css stylesheet
+
+@mixin tablet {
+  @media only screen and (min-width: #{$screen-2}) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media only screen and (min-width: #{$screen-3}) {
+    @content;
+  }
+}
+
+@mixin pc-xl {
+  @media only screen and (min-width: #{$screen-4}) {
+    @content;
+  }
+}
+
+// Button style
+@mixin getBtn($bg-color, $font-color, $font-size) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 8px;
+  font-size: $font-size;
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &,
+  &:link,
+  &:visited,
+  &:active {
+    background-color: $bg-color;
+    color: $font-color;
+  }
+
+  // Hovering feedback: color inversion & bordering
+  &:hover {
+    background-color: transparent;
+    color: $bg-color;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  // Focus feedback: bordering in black
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px black;
+  }
+
+  &:disabled {
+    background-color: var(--disabled-color);
+    box-shadow: none;
+    cursor: default;
+  }
+}

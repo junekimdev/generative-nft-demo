@@ -1,0 +1,15 @@
+import styles from './<%=name%>.module.scss'
+import { TMProps<%=(name.charAt(0).toUpperCase() + name.slice(1))%> } from './<%=name%>Type';
+//import {} from '../../controllers/types';
+
+const Presenter = (props: TMProps<%=(name.charAt(0).toUpperCase() + name.slice(1))%>) => {
+  const {} = props;
+
+  return (
+    <section className={styles.container}>
+      <div></div>
+    </section>
+  );
+}
+
+export default Presenter;

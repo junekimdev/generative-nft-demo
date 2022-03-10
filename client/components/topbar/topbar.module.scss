@@ -1,0 +1,108 @@
+/* autoprefixer grid: autoplace */
+@import '../theme';
+
+.container {
+  --topbar-height: 72px;
+  --topbar-padding: 16px;
+  --topbar-bg-color: #8772d4;
+  --connect-width: 20ch;
+  --connect-height: 2em;
+  --connect-txt-color: white;
+  --connect-txt-size: 1.5em;
+  --connect-bg-color: #a88ff8;
+}
+
+.container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: var(--topbar-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--topbar-padding);
+  background: var(--topbar-bg-color);
+  // box-shadow: 0 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  color: white;
+  font-size: 2em;
+}
+
+.infoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.info {
+  margin-right: 1ch;
+  color: white;
+  font-size: 1.5em;
+
+  i {
+    margin-right: 1ch;
+  }
+}
+
+.btn {
+  @include getBtn(var(--connect-bg-color), var(--connect-txt-color), var(--connect-txt-size));
+
+  &:hover {
+    background-color: var(--connect-bg-color);
+    color: var(--connect-txt-color);
+  }
+}
+
+.connectBtn {
+  width: var(--connect-width);
+  height: var(--connect-height);
+}
+
+.walletContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #00000050;
+}
+
+.walletWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.walletBtn {
+  width: 25vw;
+  min-width: 30ch;
+  margin: 16px;
+}
+
+.walletBtn:first-child {
+  margin: 16px 16px 8px 16px;
+}
+
+.walletBtn:last-child {
+  margin: 8px 16px 16px 16px;
+}
+
+.spinner {
+  animation: spinning 1s linear infinite;
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

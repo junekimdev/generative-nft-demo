@@ -1,0 +1,11 @@
+
+<% for (let i=0; i<actions.length; i++) {-%>
+  <%=actions[i]%>: '<%=typenames[i]%>',
+<% } -%>
+
+<%_ for (let i=0; i<actions.length; i++) {-%>
+  <%=actions[i]%>: (payload?: any) => ({
+    type: <%=name%>Const.<%=actions[i]%>,
+    payload,
+  }),
+<%_ } -%>

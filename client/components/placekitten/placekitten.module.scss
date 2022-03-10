@@ -1,0 +1,14 @@
+/* autoprefixer grid: autoplace */
+@import '../theme';
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h1 {
+  margin-left: 2ch;
+}

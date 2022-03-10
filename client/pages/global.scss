@@ -1,0 +1,99 @@
+@import '../components/theme.scss';
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+//@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// css variables
+:root {
+  --background-color: #f5f5f5;
+  --disabled-color: #cccccc;
+  --font-color: #353535;
+  --font-size: 12px;
+  --btn-bg-color: #392094;
+  --btn-font-color: #f0f0f0;
+  --btn-font-size: 14px;
+  --link-color: #5ccbf2;
+}
+
+// NextJS React Root Element
+#__next {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+}
+
+// Smooth scroll
+@include pc {
+  html {
+    scroll-behavior: smooth;
+
+    // Turn off smooth scroll for people who have motion sickness
+    @media screen and (prefers-reduced-motion: reduce) {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  color: var(--font-color);
+  background-color: var(--background-color);
+  font-size: var(--font-size);
+}
+
+// Anchor tag style
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+// List wrapper tag style
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+  text-indent: 0;
+  list-style-type: none;
+}
+
+// Button class style
+.btn {
+  @include getBtn(var(--btn-bg-color), var(--btn-font-color), var(--btn-font-size));
+}
+
+// Underlined link style
+.underline-link {
+  display: block;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: var(--link-color);
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: var(--font-color);
+  }
+}
+
+// Animation keyframes for spins
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
