@@ -5,7 +5,7 @@
   "scripts": {
     "precompile": "hardhat clean",
     "compile": "hardhat compile",
-    "test": "hardhat test",
+    "test": "hardhat test --network hardhat",
     "deploy-remote": "hardhat deploy --tags JKTnft --network rinkeby",
     "deploy-local": "hardhat deploy --tags JKTnft --network development",
     "verify": "hardhat etherscan-verify --network rinkeby"

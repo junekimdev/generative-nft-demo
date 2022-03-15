@@ -28,6 +28,7 @@ const {
 const config: HardhatUserConfig = {
   defaultNetwork: 'development',
   networks: {
+    hardhat: {},
     development: {
       url: 'http://localhost:7545',
       chainId: 1337,
